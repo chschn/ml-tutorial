@@ -5,8 +5,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 import pickle
 
-autompg = pd.read_csv('D:\\Digethic\\Software_Engineering_I\\Project\\ml-tutorial\\data\\auto-mpg.csv', sep=';', header=0)
-#autompg = pd.read_csv('..\\data\\auto_mpg.csv', sep=';', header=0)
+# autompg = pd.read_csv('D:\\Digethic\\Software_Engineering_I\\Project\\ml-tutorial\\data\\auto-mpg.csv', sep=';', header=0)
+autompg = pd.read_csv('./data/auto-mpg.csv', sep=';', header=0)
 print(autompg)
 
 y = autompg["mpg"]
@@ -22,5 +22,6 @@ reg = LinearRegression().fit(X_train,y_train)
 print(reg.coef_)
 print(reg.score(X_train,y_train))
 
-filename = 'D:\\Digethic\\Software_Engineering_I\\Project\\ml-tutorial\\data\\models\\auto-mpg.sav'
+# filename = 'D:\\Digethic\\Software_Engineering_I\\Project\\ml-tutorial\\data\\models\\auto-mpg.sav'
+filename = './data/models/auto-mpg.sav'
 pickle.dump(reg, open(filename, 'wb'))
