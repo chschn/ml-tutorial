@@ -18,3 +18,5 @@ jobs:
         with:
           name: upload-the-model
           path: ./data/models/auto-mpg.sav
+      - name: Automated testing
+        run: python -m pytest
