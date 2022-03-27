@@ -15,7 +15,8 @@ jobs:
         run: pip install -r requirements.txt
       - name: Model training
         run: python ./src/train.py
-      - uses: actions/upload-artifact@v3
+      - name: Model upload
+        uses: actions/upload-artifact@v3
         with:
-          name: Model upload
+          name: upload-the-model
           path: ./data/models/auto-mpg.sav
