@@ -1,0 +1,8 @@
+name: automated-testing
+on: [push]
+jobs:
+  automated-testing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Automated testing
+        run: pytest
