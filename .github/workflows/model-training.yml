@@ -1,7 +1,5 @@
 name: model-training
-on:
-  pull_request:
-    types: [opened, reopened, edited]
+on: [push]
 jobs:
   train-model:
     runs-on: ubuntu-latest
