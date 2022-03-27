@@ -1,0 +1,21 @@
+name: model-training
+on:
+  pull_request:
+    types: [opened, reopened]
+jobs:
+  train-model:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Python Setup
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Model training
+        run: python ./src/train.py
+      - uses: actions/upload-artifact@v3
+        with:
+          name: Model upload
+          path: ./data/models/auto-mpg.sav
