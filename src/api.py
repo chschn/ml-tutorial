@@ -4,7 +4,7 @@ import os
 from io import StringIO
 from flask_cors import CORS
 from sklearn.linear_model import LinearRegression
-import pickle
+# import pickle
 
 app = Flask(__name__)
 CORS(app)
